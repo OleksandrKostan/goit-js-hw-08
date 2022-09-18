@@ -9,7 +9,7 @@ formEl.addEventListener('submit', onFormSubmit);
 formEl.addEventListener('input', throttle(onInputChanges, 500));
 
 onPageReload();
-
+// запис
 function onInputChanges() {
   const email = nameEl.value;
   const message = messageEl.value;
@@ -21,7 +21,7 @@ function onInputChanges() {
 
   localStorage.setItem(LOCAL_KEY, JSON.stringify(formData));
 }
-
+// читання
 function onFormSubmit(e) {
   e.preventDefault();
 
@@ -36,7 +36,7 @@ function onFormSubmit(e) {
 
   localStorage.removeItem(LOCAL_KEY);
 }
-
+// перезагрузка
 function onPageReload() {
   const savedData = localStorage.getItem(LOCAL_KEY);
   const parsedData = JSON.parse(savedData);
